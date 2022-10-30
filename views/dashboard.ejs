@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>dashboard</title>
+    <script src="https://unpkg.com/ejs@3.1.6/ejs.min.js"></script>
+</head>
+
+<body>
+    <center>
+        <table border="1" cellspacing="0" cellpadding="5">
+            <tr>
+                <h1>Dashboard</h1>
+                <a href="/logout" style="padding-top: 100px;">Logout</a>
+            </tr>
+            <tr>
+                <th><a href="/dashboard/add-personal-details">Employee Details :</a> </th>
+                <td>
+                    <table border="0" cellspacing="0" cellpadding="5">
+                        <tr>
+                            <th>Name : </th>
+                            <td>
+                                <%= data.personalDetail.name %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Email : </th>
+                            <td>
+                                <%= data.employee.email %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Mobile No. : </th>
+                            <td>
+                                <%= data.personalDetail.mobile %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>DOB : </th>
+                            <td>
+                                <script>
+                                    document.write('<%= (data.personalDetail.dob) %>'.slice(4,15));
+                                </script>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Gender : </th>
+                            <td>
+                                <%= data.personalDetail.gender %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Address : </th>
+                            <td>
+                                <%= data.personalDetail.address.street +', '+ data.personalDetail.address.city +', '+ data.personalDetail.address.district +', '+ data.personalDetail.address.state +', '+ data.personalDetail.address.postal %>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th><a href="/dashboard/add-job-details">Job Details : </a></th>
+                <td>
+                    <table border="0" cellspacing="0" cellpadding="5">
+                        <tr>
+                            <th>Employee Id : </th>
+                            <td>
+                                <%= data.jobDetail.employeeId %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Department : </th>
+                            <td>
+                                <%= data.jobDetail.department %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Email : </th>
+                            <td>
+                                <%= data.jobDetail.email %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Joining Date : </th>
+                            <td>
+                                <script>
+                                    document.write('<%= data.employee.joiningDate %>'.slice(0,15));
+                                </script>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th><a href="/dashboard/add-bank-details">Bank Details : </a></th>
+                <td>
+                    <table border="0" cellspacing="0" cellpadding="5">
+                        <tr>
+                            <th>Bank Name : </th>
+                            <td>
+                                <%= data.bankDetail.bankName %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Branch Name : </th>
+                            <td>
+                                <%= data.bankDetail.branch %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Account Number : </th>
+                            <td>
+                                <%= data.bankDetail.accountNumber %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>IFSC Code : </th>
+                            <td>
+                                <%= data.bankDetail.IFSC_Code %>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>

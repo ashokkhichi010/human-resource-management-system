@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Bank Details</title>
+</head>
+<body>
+    <center>
+        <form method="post" action="/dashboard/add-bank-details">
+            <table border="1" cellspacing="0" cellpadding="5">
+                <tr><h1>Add Bank Details</h1></tr>
+                <tr>
+                    <th>Bank Name : </th>
+                    <td><input type="text" name="bankName" placeholder="Bank Name" value="<%= data.bankDetail.bankName %>" required/></td>
+                </tr>
+                <tr>
+                    <th>Branch Name : </th>
+                    <td><input type="text" name="branch" placeholder="Branch Name" value="<%= data.bankDetail.branch %>" required/></td>
+                </tr>
+                <tr>
+                    <th>Account Number : </th>
+                    <td><input type="text" name="accountNumber" placeholder="Account Number" value="<%= data.bankDetail.accountNumber %>" required/></td>
+                </tr>
+                <tr>
+                    <th>IFSC Code : </th>
+                    <td><input type="text" name="IFSC_Code" placeholder="Company Email" value="<%= data.bankDetail.IFSC_Code %>" required/></td>
+                </tr>
+            </table><br>
+            <p style="color: red;"><%= message %></p><br>
+            <input type="submit" value="Save" required/><br>
+            <a href="/dashboard"> Back </a>
+        </form>
+    </center>    
+</body>
+</html>

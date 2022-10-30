@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Job Details</title>
+</head>
+<body>
+    <center>
+        <form method="post" action="/dashboard/add-job-details">
+            <table border="1" cellspacing="0" cellpadding="5">
+                <tr><h1>Add Job Details</h1></tr>
+                <tr>
+                    <th>Employee Id : </th>
+                    <td><input type="text" name="employeeId" placeholder="Employee Id" value="<%= data.jobDetail.employeeId %>" required/></td>
+                </tr>
+                <tr>
+                    <th>Department : </th>
+                    <td><input type="text" name="department" placeholder="Department" value="<%= data.jobDetail.department %>" required/></td>
+                </tr>
+                <tr>
+                    <th>Company Email : </th>
+                    <td><input type="text" name="email" placeholder="Company Email" value="<%= data.jobDetail.email %>" required/></td>
+                </tr>
+            </table><br>
+            <p style="color: red;"><%= message %></p><br>
+            <input type="submit" value="Save" required/><br>
+            <a href="/dashboard"> Back </a>
+        </form>
+    </center>    
+</body>
+</html>

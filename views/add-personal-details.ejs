@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Personal Details</title>
+</head>
+<body>
+    <center>
+        <form method="post" action="/dashboard/add-personal-details">
+            <table border="1" cellspacing="0" cellpadding="5">
+                <tr><h1>Add Personal Details</h1></tr>
+                <tr>
+                    <th>Name : </th>
+                    <td><input type="text" name="name" placeholder="Name" value="<%= data.personalDetail.name %>" required/></td>
+                </tr>
+                <tr>
+                    <th>Mobile : </th>
+                    <td><input type="text" name="mobile" placeholder="Mobile" value="<%= data.personalDetail.mobile %>" required/></td>
+                </tr>
+                <tr>
+                    <th>DOB : </th>
+                    <td><input id="dob" type="date" name="dob" placeholder="Date of Birth" required/></td>
+                </tr>
+                <tr>
+                    <th>Gender : </th>
+                    <td>
+                        Male : <input id="male" type="radio" name="gender" value="male" required/>
+                        Female : <input id="female" type="radio" name="gender" value="female" required/>
+                        Other : <input id="other" type="radio" name="gender" value="other" required/>
+                        <script>
+                            var gender = '<%= data.personalDetail.gender %>';
+                            if(gender != ' '){
+                                document.getElementById(gender).checked = true;
+                            }
+                            if(dob != ' '){
+                                document.getElementById('dob').defaultValue = "<%= data.personalDetail.dob %>";
+                            }
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Address : </th>
+                    <td>
+                        <table border="0" cellspacing="0" cellpadding="5">
+                            <tr>
+                                <th>Street : </th>
+                                <td><input type="text" name="street" placeholder="Street" value="<%= data.personalDetail.address.street %>" required/></td>
+                            </tr>
+                            <tr>
+                                <th>city : </th>
+                                <td><input type="text" name="city" placeholder="City" value="<%= data.personalDetail.address.city %>" required/></td>
+                            </tr>
+                            <tr>
+                                <th>district : </th>
+                                <td><input type="text" name="district" placeholder="District" value="<%= data.personalDetail.address.district %>" required/></td>
+                            </tr>
+                            <tr>
+                                <th>state : </th>
+                                <td><input type="text" name="state" placeholder="State" value="<%= data.personalDetail.address.state %>" required/></td>
+                            </tr>
+                            <tr>
+                                <th>postal : </th>
+                                <td><input type="text" name="postal" placeholder="Postal" value="<%= data.personalDetail.address.postal %>" required/></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table><br>
+            <p style="color: red;"><%= message %></p><br>
+            <input type="submit" value="Save" required/><br>
+            <a href="/dashboard"> Back </a>
+        </form>
+    </center>    
+</body>
+</html>
